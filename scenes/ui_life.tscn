@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5gal4io6mvpu"]
+
+[ext_resource type="Texture2D" uid="uid://d2kuy1lfkwpfm" path="res://assets/textures/playerLife1_blue.png" id="1_mtec5"]
+
+[node name="UILife" type="TextureRect" unique_id=303617395]
+offset_right = 33.0
+offset_bottom = 26.0
+texture = ExtResource("1_mtec5")

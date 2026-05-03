@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwtm13ws3ca17"]
+
+[ext_resource type="Script" uid="uid://2vdyybbm1rju" path="res://scripts/collection_area.gd" id="1_jfbh3"]
+[ext_resource type="AudioStream" uid="uid://daaj8wls8m1hv" path="res://assets/audio/hurt_sound.wav" id="2_2eubv"]
+[ext_resource type="Texture2D" uid="uid://bxs6mur5ogyl8" path="res://assets/textures/circle_particle.png" id="3_cbl4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_117s0"]
+radius = 112.00446
+
+[sub_resource type="Curve" id="Curve_pp7xx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6prcf"]
+curve = SubResource("Curve_pp7xx")
+
+[sub_resource type="Curve" id="Curve_futin"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6jp01"]
+curve = SubResource("Curve_futin")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eurtk"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 1.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_6jp01")
+color = Color(0.5, 1, 0.5916667, 1)
+alpha_curve = SubResource("CurveTexture_6prcf")
+
+[node name="CollectionArea" type="Area2D"]
+script = ExtResource("1_jfbh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_117s0")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2eubv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 4
+texture = ExtResource("3_cbl4u")
+lifetime = 2.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_eurtk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

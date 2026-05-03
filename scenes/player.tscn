@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1wnfmblulhx0"]
+
+[ext_resource type="Texture2D" uid="uid://bv85dew7havt2" path="res://assets/textures/player_ship.png" id="1_817kt"]
+[ext_resource type="Script" uid="uid://dxo4lurlij5fc" path="res://scripts/player.gd" id="1_w51pe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1neb"]
+radius = 19.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1971180343]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_w51pe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=590024381]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_817kt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=331597127]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_h1neb")
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=1564198277]
+position = Vector2(0, -31)

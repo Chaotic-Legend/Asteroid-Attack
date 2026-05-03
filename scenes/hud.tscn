@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cyg1avbtmwoj7"]
+
+[ext_resource type="Script" uid="uid://dfcm7rw8rmsnn" path="res://scripts/hud.gd" id="1_3evr2"]
+[ext_resource type="FontFile" uid="uid://c8bymw6is4rfv" path="res://assets/font/Kenney Blocks.ttf" id="2_tb6up"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_amtcr"]
+font = ExtResource("2_tb6up")
+font_size = 48
+
+[node name="HUD" type="Control" unique_id=939419745]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3evr2")
+
+[node name="Score" type="Label" parent="." unique_id=1340538792]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 12.0
+offset_right = 377.0
+offset_bottom = 87.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_amtcr")
+
+[node name="Lives" type="HBoxContainer" parent="." unique_id=807959437]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 89.0
+offset_right = 201.0
+offset_bottom = 115.0
+scale = Vector2(1.5, 1.5)
