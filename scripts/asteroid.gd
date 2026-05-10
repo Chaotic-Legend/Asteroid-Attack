@@ -1,14 +1,10 @@
 class_name Asteroid extends Area2D
 
 signal exploded(pos, size, points)
-
 var movement_vector := Vector2(0, -1)
-
 enum AsteroidSize{LARGE, MEDIUM, SMALL}
 @export var size := AsteroidSize.LARGE
-
 var speed := 200.0
-
 @onready var sprite = $Sprite2D
 @onready var cshape = $CollisionShape2D
 
@@ -43,7 +39,6 @@ func _ready():
 
 func _physics_process(delta):
 	global_position += movement_vector.rotated(rotation) * speed * delta
-	
 	var radius = cshape.shape.radius
 	var screen_size = get_viewport().get_visible_rect().size
 	if (global_position.y+radius) < 0:

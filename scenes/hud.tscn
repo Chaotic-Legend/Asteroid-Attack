@@ -9,9 +9,11 @@ font_size = 48
 
 [node name="HUD" type="Control" unique_id=939419745]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_3evr2")
 
 [node name="Score" type="Label" parent="." unique_id=1340538792]
@@ -30,3 +32,22 @@ offset_top = 89.0
 offset_right = 201.0
 offset_bottom = 115.0
 scale = Vector2(1.5, 1.5)
+
+[node name="Pause" type="Label" parent="." unique_id=1772805556]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -37.5
+offset_right = 180.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_amtcr")
+horizontal_alignment = 1

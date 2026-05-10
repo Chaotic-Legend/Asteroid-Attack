@@ -8,5 +8,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		collect_sound.play()
 	else:
-		print("Not an asteroid, ignoring")
+		print("Not an asteroid, ignoring.")
 	

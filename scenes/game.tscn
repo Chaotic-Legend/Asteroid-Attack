@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cyg1avbtmwoj7" path="res://scenes/hud.tscn" id="2_g7hwg"]
 [ext_resource type="PackedScene" uid="uid://bh1r82178c2u1" path="res://scenes/asteroid.tscn" id="3_6btt6"]
 [ext_resource type="PackedScene" uid="uid://dwwjje64opjab" path="res://scenes/game_over_screen.tscn" id="3_km7re"]
+[ext_resource type="Script" uid="uid://dtoxde8wreq8e" path="res://scripts/background_star_fields.gd" id="4_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bxpqhkwbma8la" path="res://scenes/player_spawn_area.tscn" id="6_kp4kv"]
 [ext_resource type="AudioStream" uid="uid://r1q77akmsud0" path="res://assets/audio/sfx_laser1.wav" id="7_ymdea"]
 [ext_resource type="AudioStream" uid="uid://gi3kgc3x11cd" path="res://assets/audio/hit.wav" id="8_p30em"]
@@ -52,6 +53,7 @@ script = ExtResource("1_ci0lx")
 visible = false
 
 [node name="BackgroundStarFields" type="Node2D" parent="." unique_id=987143040]
+script = ExtResource("4_vtaks")
 
 [node name="StarFieldBack" type="GPUParticles2D" parent="BackgroundStarFields" unique_id=1339966538]
 z_index = -100
@@ -111,4 +113,4 @@ stream = ExtResource("8_p30em")
 stream = ExtResource("9_x64l8")
 
 [node name="Player" parent="." unique_id=1188263885 instance=ExtResource("1_lp7mr")]
-position = Vector2(640, 361)
+position = Vector2(640, 360)
