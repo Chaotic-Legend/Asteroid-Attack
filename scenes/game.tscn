@@ -105,12 +105,18 @@ position = Vector2(640, 360)
 
 [node name="LaserSound" type="AudioStreamPlayer" parent="." unique_id=304926231]
 stream = ExtResource("7_ymdea")
+max_polyphony = 8
+bus = &"SFX"
 
 [node name="AsteroidHitSound" type="AudioStreamPlayer" parent="." unique_id=1189270394]
 stream = ExtResource("8_p30em")
+volume_db = 10.0
+bus = &"SFX"
 
 [node name="PlayerDieSound" type="AudioStreamPlayer" parent="." unique_id=1909728296]
 stream = ExtResource("9_x64l8")
+volume_db = 10.0
+bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1188263885 instance=ExtResource("1_lp7mr")]
 position = Vector2(640, 360)
