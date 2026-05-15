@@ -21,10 +21,18 @@ var score := 0:
 		if score > high_score:
 			high_score = score
 			save_high_score()
+
 var lives: int:
 	set(value):
 		lives = value
 		hud.init_lives(lives)
+		
+func reset_high_score() -> void:
+	high_score = 0
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+	save_high_score()
+	high_score_label.text = "HIGH SCORE: 0"
 
 func init_spawn_position():
 	update_spawn_position()
@@ -53,6 +61,8 @@ func update_spawn_position():
 func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("reset_highscore"):
+		reset_high_score()
 
 func _on_player_laser_shot(laser):
 	$LaserSound.play()
